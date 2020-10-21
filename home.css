@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    font-family: arial;
+}
+#logo{
+    float: left;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+.navBar ul {
+    list-style-type: none; 
+    margin: 0;
+    padding: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 20px;
+}
+.navBar li {
+     display: flex;
+  float: right;
+    justify-content: center;
+}
+.navBar li a {
+  color: white;
+  text-align: center;
+  padding: 40px 40px;
+  text-decoration: none;
+}
+.navBar li a:hover:not(.active) {
+  background-color: #111;
+}
+.active {
+  background-color: #4CAF50;
+}
+#title{
+    text-align: center;
+}
+#patientTitle{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.intakeForm{
+    border-radius: 20px;
+    border:solid 3px lightgray;
+    margin: 20px;
+    padding: 20px; 
+}
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
