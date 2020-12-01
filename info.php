@@ -19,7 +19,7 @@ $sql = "INSERT INTO Patient (first, last)
 VALUES ('$_POST[first]', '$_POST[last]')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  header('location: http://35.193.222.252/');
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
