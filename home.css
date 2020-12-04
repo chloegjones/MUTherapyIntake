@@ -41,23 +41,31 @@ body{
     padding: 0;
     margin: 0;
 }
+
 .intakeForm{
     border-radius: 20px;
     border:solid 3px lightgray;
     margin: 20px;
     padding: 20px; 
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-input[type=text]{
+
+input[type=tel], input[type=email], input[type=date], input[type=text], .therapy{
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 .about 
 {
     text-align: center;
 }
+
+
