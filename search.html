@@ -19,16 +19,17 @@
         </div>
         <div class="intakeForm">
             <span><h1 id="patientTitle">Search for Patients</h1></span>
-            <form id="patient">
+            <form action="search.php" method="post" id="patientSearch">
                     <label for="fname"> First Name: </label><br>
                     <input type="text" id="lastName" name="fname">
                     <br>
                     <label for="fname"> Last Name: </label><br>
                     <input type="text" id="lastName" name="lname">
+                <button type="submit" name="patientSearch" value="patientSearch">Search</button>
             </form>
             
               <span><h1 id="patientTitle">Search for Doctors</h1></span>
-            <form id="patient">
+            <form action="search.php" method="post" id="doctorSearch">
                     <label for="fname"> First Name: </label><br>
                     <input type="text" id="lastName" name="fname">
                     <br>
@@ -36,7 +37,8 @@
                     <input type="text" id="lastName" name="lname">
                     <label for="title">Specialty:</label><br>
                     <input type="text" id="specialty" name="typeOfSpecialty">
+                <button type="submit" name="doctorSearch" value="doctorSearch">Submit</button>
             </form>
         </div>
-    </body>
+    </body> 
 </html>

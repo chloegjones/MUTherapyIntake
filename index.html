@@ -17,143 +17,131 @@
                 <a id="logo" href="index.html"><img src="mu-logo.png" a alt="MUHealth"></a>
             </ul>
         </div>
-        
         <h1 id="title">Intake Form</h1>
-        <div class="intakeForm"> <!-- intake form -->
-            <div> <!-- patient entity set --> 
-                <h3>Patient Info</h3>
-                <input id="fn" type="text" name="first" placeholder="First Name" maxlength="30">
-                <input id="ln" type="text" name="last" placeholder="Last Name" maxlength="30">
-                <input id="phone" type="tel" name="phone_number" placeholder="Phone Number" maxlength="12">
-                <input id="street" type="text" name="street" placeholder="Street Address" maxlength="30">
-                <input id="city" type="text" name="city" placeholder="City" maxlength="30">
-                <input id="state" type="text" name="state" placeholder="State" maxlength="5">
-                <input id="zip" type="text" name="ZIP" placeholder="Zip Code" maxlength="5">
-                <input id="ssn" type="text" name="SSN" placeholder="Social Security Number" maxlength="30">
-                <input id="race" type="text" name="race" placeholder="Race" maxlength="30">
-                <input id="gender" type="text" name="gender" placeholder="Gender" maxlength="30">
-                <input id="email" type="email" name="email" placeholder="Email" maxlength="30">
-                <small>Birthday</small>
-                <input id="age" type="date" name="age" placeholder="Age" maxlength="30">
-            </div> <!-- end patient entity set -->
-            
-            <div> <!-- emergency contact --> 
-                <h3>Emergency Contact</h3>
-                <input id="efn" type="text" name="first" placeholder="First Name" maxlength="30">
-                <input id="emiddle" type="text" name="middle" placeholder="Middle Name" maxlength="30">
-                <input id="eln" type="text" name="last" placeholder="Last Name" maxlength="30">
-                <input id="pfn" type="text" name="first" placeholder=" Patient First Name" maxlength="30">
-                <input id="pln" type="text" name="last" placeholder="Patient Last Name" maxlength="30">
-                <input id="ssn" type="text" name="first" placeholder="Patient Social Security Number" maxlength="30">
-                <input id="phone" type="tel" name="phone_number" placeholder="Emergency Contact Phone Number" maxlength="12">
-                <input id="email" type="email" name="email" placeholder="Emergency Contact Email" maxlength="30">
-                <input id="street" type="text" name="street" placeholder="Street Address" maxlength="30">
-                <input id="city" type="text" name="city" placeholder="City" maxlength="30">
-                <input id="state" type="text" name="state" placeholder="State" maxlength="30">
-                <input id="zip" type="text" name="ZIP" placeholder="Zip Code" maxlength="30">
-                <input id="relationship" type="text" name="relationship_to_patient" placeholder="Relationship to Parent" maxlength="30">   
-            </div> <!-- end emergency contact --> 
-            
-            <div> <!-- alt person --> 
-                <h3>Alternative Person</h3>
-                <input id="afn" type="text" name="first" placeholder=" Alternative Person's First Name" maxlength="30">
-                <input id="amiddle" type="text" name="middle" placeholder=" Alternative Person's Middle Name" maxlength="30">
-                <input id="aln" type="text" name="last" placeholder=" ALternative Person's First Name" maxlength="30">
-                <input id="pfn" type="text" name="first" placeholder=" Patient First Name" maxlength="30">
-                <input id="pln" type="text" name="last" placeholder="Patient Last Name" maxlength="30">
-                <input id="ssn" type="text" name="first" placeholder="Patient Social Security Number" maxlength="30">
-                <input id="phone" type="tel" name="phone_number" placeholder="Alternative Person's Phone Number" maxlength="12">
-                <input id="email" type="email" name="email" placeholder="Alternative Person's Email" maxlength="30">
-                <input id="street" type="text" name="street" placeholder="Street Address" maxlength="30">
-                <input id="city" type="text" name="city" placeholder="City" maxlength="30">
-                <input id="state" type="text" name="state" placeholder="State" maxlength="30">
-                <input id="zip" type="text" name="ZIP" placeholder="Zip Code" maxlength="30">
-                <input id="relationship" type="text" name="relationship_to_patient" placeholder="Relationship to Parent" maxlength="30">
-            </div> <!-- end alt person --> 
-            
-            <div> <!-- reason for visit --> 
-                <h3>Reason for Visit</h3>
-                    <select id="therapy_type" name="types_of_therapy" class="therapy">
-                        <option value="type" selected>Select Type of Therapy Needed</option>
-                        <option value="Physical">Physical</option>
-                        <option value="Occupatonal">Occupational</option>
-                        <option value="Speech">Speech</option>
-                    </select>
-                
-     <!-- NEED PHP SUBMIT OR JUST LET PATIENT TYPE IT IN-->
-                
-                <input id="location" type="text" name="location" placeholder="Location of Office" maxlength="30">
-                <input id="level" type="text" name="level" placeholder="Level of Office" maxlength="2">
-            </div> <!-- end visit --> 
-            
-    <!-- this set related to "states a" and "uses" entity set  
-            <div> 
-                <h3>Type of Therapy</h3> 
-            </div>
-            <div> 
-                <h3>Do you have insurance?</h3> 
-                    yes no options 
-                    if they do... 
-            </div>
-        -->
-            
-            <div> <!-- Insurance --> 
-                <h3>Insurance</h3>
-                <input id="i_number" type="text" name="issuer_number" placeholder="Issuer Number" maxlength="30">
-                <input id="servicepn" type="tel" name="service_phone_number" placeholder="Gender" maxlength="12">
-                <input id="coname" type="text" name="company_name" placeholder="Insurance Name" maxlength="30">
-                <input id="groupn" type="text" name="group_number" placeholder="Group Number" maxlength="30">
-                <input id="idn" type="text" name="id_number" placeholder="ID Number" maxlength="30">
-            </div> <!-- end insurance --> 
+            <div class="intakeForm"> <!-- intake form -->
+                <form action="info.php" method="post" id="mainForm">
+                        <h3>Patient Info</h3>
+                        <input id="fn" type="text" name="first" placeholder="First Name" maxlength="30">
+                        <input id="ln" type="text" name="last" placeholder="Last Name" maxlength="30">
+                        <input id="phone" type="tel" name="phone_number" placeholder="Phone Number" maxlength="12">
+                        <input id="street" type="text" name="street" placeholder="Street Address" maxlength="30">
+                        <input id="city" type="text" name="city" placeholder="City" maxlength="30">
+                        <input id="state" type="text" name="state" placeholder="State" maxlength="5">
+                        <input id="zip" type="text" name="ZIP" placeholder="Zip Code" maxlength="5">
+                        <input id="ssn" type="text" name="SSN" placeholder="Social Security Number" maxlength="30">
+                        <input id="race" type="text" name="race" placeholder="Race" maxlength="30">
+                        <input id="gender" type="text" name="gender" placeholder="Gender" maxlength="30">
+                        <input id="email" type="email" name="email" placeholder="Email" maxlength="30">
+                        <small>Birthday</small>
+                        <input id="DOB" type="date" name="DOB">
 
-            <div> <!-- Medical Record --> 
-                <h3>Medical Record</h3>
-                <input id="rid" type="text" name="record_id" placeholder="Medical Record ID Number" maxlength="30">
-                <input id="medications" type="text" name="medications" placeholder="Please list any medications you are currently on..." maxlength="100">
-                <input id="famhistory" type="text" name="family_history" placeholder="Please list your family's medical history..." maxlength="100">
-                <input id="allergies" type="text" name="allergies" placeholder="Please list any allergies you may have..." maxlength="100">
-                <input id="immunizations" type="text" name="immunizations" placeholder="Please list your immunization history..." maxlength="100">
-                <input id="operations" type="text" name="operations" placeholder="Please list any past operations you have had..." maxlength="100">
-            </div> <!-- end Medical Record -->
+                        <button type="submit" name="patientSubmit" value="patientSubmit">Submit</button>
+    
+                        <h3>Emergency Contact</h3>
+                        <input id="fn" type="text" name="ep_first" placeholder="Patient First Name" maxlength="30">
+                        <input id="ln" type="text" name="ep_last" placeholder="Patient Last Name" maxlength="30">
+                        <input id="ssn" type="text" name="ep_SSN" placeholder="Patient Social Security Number" maxlength="30">
+                        <input id="efn" type="text" name="e_first" placeholder="First Name" maxlength="30">
+                        <input id="emiddle" type="text" name="e_middle" placeholder="Middle Name" maxlength="30">
+                        <input id="eln" type="text" name="e_last" placeholder="Last Name" maxlength="30">
+                        <input id="phone" type="tel" name="e_phone_number" placeholder="Emergency Contact Phone Number" maxlength="12">
+                        <input id="email" type="email" name="e_email" placeholder="Emergency Contact Email" maxlength="30">
+                        <input id="street" type="text" name="e_street" placeholder="Street Address" maxlength="30">
+                        <input id="city" type="text" name="e_city" placeholder="City" maxlength="30">
+                        <input id="state" type="text" name="e_state" placeholder="State" maxlength="30">
+                        <input id="zip" type="text" name="e_ZIP" placeholder="Zip Code" maxlength="30">
+                        <input id="relationship" type="text" name="e_relationship_to_patient" placeholder="Relationship to Parent" maxlength="30">   
+                    
+                        <button type="submit" name="emergencySubmit" value="emergencySubmit">Submit</button>
+                    
+                        <h3>Alternative Person</h3>
+                      <input id="fn" type="text" name="ap_first" placeholder="Patient First Name" maxlength="30">
+                        <input id="ln" type="text" name="ap_last" placeholder="Patient Last Name" maxlength="30">
+                        <input id="ssn" type="text" name="ap_SSN" placeholder="Patient Social Security Number" maxlength="30">
+                        <input id="afn" type="text" name="a_first" placeholder=" Alternative Person's First Name" maxlength="30">
+                        <input id="amiddle" type="text" name="a_middle" placeholder=" Alternative Person's Middle Name" maxlength="30">
+                        <input id="aln" type="text" name="a_last" placeholder=" ALternative Person's First Name" maxlength="30">
+                        <input id="phone" type="tel" name="a_phone_number" placeholder="Alternative Person's Phone Number" maxlength="12">
+                        <input id="email" type="email" name="a_email" placeholder="Alternative Person's Email" maxlength="30">
+                        <input id="street" type="text" name="a_street" placeholder="Street Address" maxlength="30">
+                        <input id="city" type="text" name="a_city" placeholder="City" maxlength="30">
+                        <input id="state" type="text" name="a_state" placeholder="State" maxlength="30">
+                        <input id="zip" type="text" name="a_ZIP" placeholder="Zip Code" maxlength="30">
+                        <input id="relationship" type="text" name="a_relationship_to_patient" placeholder="Relationship to Parent" maxlength="30">
+                        <button type="submit" name="alternateSubmit" value="alternateSubmit">Submit</button>
+                    
+                        <h3>Reason for Visit</h3>
+                            <select id="therapy_type" name="type_of_therapy" class="therapy">
+                                <option value="type" selected>Select Type of Therapy Needed</option>
+                                <option value="Physical">Physical</option>
+                                <option value="Occupatonal">Occupational</option>
+                                <option value="Speech">Speech</option>
+                            </select>
+
+             <!-- NEED PHP SUBMIT OR JUST LET PATIENT TYPE IT IN-->
+
+                        <input id="location" type="text" name="location" placeholder="Location of Office" maxlength="30">
+                        <input id="level" type="text" name="level" placeholder="Level of Office" maxlength="2">
+                        <button type="submit" name="reasonSubmit" value="reasonSubmit">Submit</button>
+            <!-- this set related to "states a" and "uses" entity set  
+                    <div> 
+                        <h3>Type of Therapy</h3> 
+                    </div>
+                    <div> 
+                        <h3>Do you have insurance?</h3> 
+                            yes no options 
+                            if they do... 
+                    </div>
+                -->
+
+
+                        <h3>Insurance</h3>
+                        <input id="i_number" type="text" name="issuer_number" placeholder="Issuer Number" maxlength="30">
+                        <input id="servicepn" type="tel" name="service_phone_number" placeholder="Gender" maxlength="12">
+                        <input id="coname" type="text" name="company_name" placeholder="Insurance Name" maxlength="30">
+                        <input id="groupn" type="text" name="group_number" placeholder="Group Number" maxlength="30">
+                        <input id="idn" type="text" name="id_number" placeholder="ID Number" maxlength="30">
+                        <button type="submit" name="insuranceSubmit" value="insuranceSubmit">Submit</button>
+                    
+                        <h3>Medical Record</h3>
+                        <input id="rid" type="text" name="RID" placeholder="Medical Record ID Number" maxlength="30">
+                        <input id="medications" type="text" name="medication" placeholder="Please list any medications you are currently on..." maxlength="100">
+                        <input id="famhistory" type="text" name="family_history" placeholder="Please list your family's medical history..." maxlength="100">
+                        <input id="allergies" type="text" name="allergies" placeholder="Please list any allergies you may have..." maxlength="100">
+                        <input id="immunizations" type="text" name="immunizations" placeholder="Please list your immunization history..." maxlength="100">
+                        <input id="operations" type="text" name="operations" placeholder="Please list any past operations you have had..." maxlength="100">
+                        <button type="submit" name="recordSubmit" value="recordSubmit">Submit</button>
+             
+                        <h3>Doctor</h3>
+            <!-- specialist type, therapist type, primary care -->
+            <!-- belongs to what clinic --> 
+                        <input id="upin" type="text" name="UPIN" placeholder="Doctor's UPIN" maxlength="30">
+                        <input id="dname" type="text" name="doctor_name" placeholder="Doctor's Name" maxlength="30">
+                        <button type="submit" name="doctorSubmit" value="doctorSubmit">Submit</button>
+                    
+                        <h3>Clinic</h3>
+                        <input id="cname" type="text" name="clinic_name" placeholder="Name of Clinic" maxlength="30">
+                        <input id="street" type="text" name="c_street" placeholder="Street Address" maxlength="30">
+                        <input id="city" type="text" name="c_city" placeholder="City" maxlength="30">
+                        <input id="state" type="text" name="c_state" placeholder="State" maxlength="30">
+                        <input id="zip" type="text" name="c_ZIP" placeholder="Zip Code" maxlength="30">
+                        <small>Start Date</small>
+                        <input id="startdate" type="date" name="start_date" placeholder="Start Date" maxlength="30">
+                        <small>End Date</small>
+                        <input id="enddate" type="date" name="end_date" placeholder="End Date" maxlength="30">
+                        <button type="submit" name="clinicSubmit" value="clinicSubmit">Submit</button>
+                    
+                        <h3>Treatment Plan</h3>
+                    <input id="fn" type="text" name="tp_first" placeholder="Patient First Name" maxlength="30">
+                        <input id="ln" type="text" name="tp_last" placeholder="Patient Last Name" maxlength="30">
+                        <input id="ssn" type="text" name="tp_SSN" placeholder="Patient Social Security Number" maxlength="30">
+                        <input id="goals" type="text" name="goals" placeholder="Treatment & Patient Goals" maxlength="30">
+                        <input id="timeline" type="text" name="timeline" placeholder="Treatment Timeline" maxlength="30">
+                        <input id="activities" type="text" name="activities" placeholder="List Activities" maxlength="100">
+                        <input id="concern" type="text" name="other_areas_of_concern" placeholder="List Other Areas of Concern" maxlength="100">
+                        <button type="submit" name="treatmentSubmit" value="treatmentSubmit">Submit</button>
+                     </form>
             
-            <div> <!-- doctor --> 
-                <h3>Doctor</h3>
-    <!-- specialist type, therapist type, primary care -->
-    <!-- belongs to what clinic --> 
-                <input id="upin" type="text" name="UPIN" placeholder="Doctor's UPIN" maxlength="30">
-                <input id="dname" type="text" name="doctor_name" placeholder="Doctor's Name" maxlength="30">
-                <select id="therapy_type" name="types_of_therapy" class="therapy">
-                        <option value="d_type" selected>Select Type of Doctor's Specialty</option>
-                        <option value="Primary Care">Primary Care</option>
-                        <option value="Therapist">Therapist</option>
-                        <option value="Specialist">Specialist</option>
-                    </select>
-            </div> <!-- end doctor -->
-            
-            <div> <!-- clinic --> 
-                <h3>Clinic</h3>
-                <input id="cname" type="text" name="clinic_name" placeholder="Name of Clinic" maxlength="30">
-                <input id="street" type="text" name="street" placeholder="Street Address" maxlength="30">
-                <input id="city" type="text" name="city" placeholder="City" maxlength="30">
-                <input id="state" type="text" name="state" placeholder="State" maxlength="30">
-                <input id="zip" type="text" name="ZIP" placeholder="Zip Code" maxlength="30">
-                <small>Start Date</small>
-                <input id="startdate" type="date" name="start_date" placeholder="Start Date" maxlength="30">
-                <small>End Date</small>
-                <input id="enddate" type="date" name="end_date" placeholder="End Date" maxlength="30">
-            </div> <!-- end clinic -->
-            
-            <div> <!-- Treatment Plan --> 
-                <h3>Treatment Plan</h3>
-                <input id="pfn" type="text" name="first" placeholder=" Patient First Name" maxlength="30">
-                <input id="pln" type="text" name="last" placeholder="Patient Last Name" maxlength="30">
-                <input id="ssn" type="text" name="first" placeholder="Patient Social Security Number" maxlength="30">
-                <input id="goals" type="text" name="goals" placeholder="Treatment & Patient Goals" maxlength="30">
-                <input id="timeline" type="text" name="timeline" placeholder="Treatment Timeline" maxlength="30">
-                <input id="activities" type="text" name="activities" placeholder="List Activities" maxlength="100">
-                <input id="concern" type="text" name="other_areas_of_concern" placeholder="List Other Areas of Concern" maxlength="100">
-            </div> <!-- end treatment plan -->
-            
-        </div> <!-- end intake form -->            
+        </div>
     </body>
 </html>
