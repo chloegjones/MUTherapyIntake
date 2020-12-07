@@ -25,19 +25,28 @@
                     <br>
                     <label for="fname"> Last Name: </label><br>
                     <input type="text" id="lastName" name="lname">
+                    <label for="ssn"> SSN: </label><br>
+                    <input type="text" id="ssn" name="ssn">
                 <button type="submit" name="patientSearch" value="patientSearch">Search</button>
             </form>
             
-              <span><h1 id="patientTitle">Search for Doctors</h1></span>
+              <span><h1 id="doctorTitle">Search for Doctors</h1></span>
             <form action="search.php" method="post" id="doctorSearch">
                     <label for="fname"> First Name: </label><br>
-                    <input type="text" id="lastName" name="fname">
+                    <input type="text" id="dfname" name="dfname">
                     <br>
-                    <label for="fname"> Last Name: </label><br>
-                    <input type="text" id="lastName" name="lname">
-                    <label for="title">Specialty:</label><br>
-                    <input type="text" id="specialty" name="typeOfSpecialty">
-                <button type="submit" name="doctorSearch" value="doctorSearch">Submit</button>
+                <button type="submit" name="doctorSearch" value="doctorSearch">Search</button>
+            </form>
+            <span><h1 id="delete">Delete/Update Patients</h1></span>
+            <form action="search.php" method="post" id="doctorSearch">
+                    <label for="ssn"> Old SSN: </label><br>
+                    <input type="text" id="dssn" name="dssn">
+                    <label for="ssn"> New SSN: </label><br>
+                    <input type="text" id="ndssn" name="ndssn">
+                    <br>
+                <button type="submit" name="delete" value="delete">Delete</button>
+                <button type="submit" name="update" value="update">Update</button>
+
             </form>
         </div>
     </body> 

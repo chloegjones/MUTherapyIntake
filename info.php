@@ -39,15 +39,12 @@ if(isset($_POST['patientSubmit'])) {
     $sql = "INSERT INTO Patient (first, last, ssn, phone_number, email, city, zip, street, state, race, age, gender, DOB) VALUES ('$varFirst', '$varLast', $varSSN, '$varPhoneNumber', '$varEmail', '$varCity', '$varZIP', '$varStreet', '$varState', '$varRace', '$varAge', '$varGender', '$varDOB');";
     
     if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+      echo "<br> New record created successfully";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }elseif(isset($_POST['emergencySubmit'])){        
 //    emergency_contact inputs
-    $varEPFirst = $_POST['ep_first'];
-    $varEPLast = $_POST['ep_last'];
-    $varEPSSN = intval($_POST['ep_SSN']);
     $varEFirst = $_POST['e_first'];
     $varEMiddle = $_POST['e_middle'];
     $varELast = $_POST['e_last'];
@@ -59,7 +56,7 @@ if(isset($_POST['patientSubmit'])) {
     $varEState = $_POST['e_state'];
     $varERelationship = $_POST['e_relationship_to_patient'];
     
-    $sql = "INSERT INTO emergency_contact (e_first, e_middle, e_last, p_first, p_last, ssn, phone_number, email, city, zip, street, state, relationship_to_patient) VALUES ('$varEFirst', '$varEMiddle', '$varELast', '$varEPFirst', '$varEPLast', $varEPSSN, '$varEPhoneNumber', '$varEEmail', '$varECity', '$varEZIP', '$varEStreet', '$varEState', '$varERelationship');";
+    $sql = "INSERT INTO emergency_contact (e_first, e_middle, e_last, p_first, p_last, ssn, phone_number, email, city, zip, street, state, relationship_to_patient) VALUES ('$varEFirst', '$varEMiddle', '$varELast', '$varFirst', '$varLast', $varSSN, '$varEPhoneNumber', '$varEEmail', '$varECity', '$varEZIP', '$varEStreet', '$varEState', '$varERelationship');";
     
     if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
@@ -68,9 +65,6 @@ if(isset($_POST['patientSubmit'])) {
     }
 }elseif(isset($_POST['alternateSubmit'])){   
     //    alternate_person inputs
-    $varAPFirst = $_POST['ap_first'];
-    $varAPLast = $_POST['ap_last'];
-    $varAPSSN = intval($_POST['ap_SSN']);
     $varAFirst = $_POST['a_first'];
     $varAMiddle = $_POST['a_middle'];
     $varALast = $_POST['a_last'];
@@ -82,7 +76,7 @@ if(isset($_POST['patientSubmit'])) {
     $varAState = $_POST['a_state'];
     $varARelationship = $_POST['a_relationship_to_patient'];
     
-     $sql = "INSERT INTO alternate_person (p_first, p_last, ssn, a_first, a_middle, a_last, phone_number, email, city, ZIP, street, state, relationship_to_patient) VALUES ('$varAPFirst', '$varAPLast', $varAPSSN, '$varAFirst', '$varAMiddle', '$varALast', '$varAPhoneNumber', '$varAEmail', '$varACity', '$varAZIP', '$varAStreet', '$varAState', '$varARelationship')";
+     $sql = "INSERT INTO alternate_person (p_first, p_last, ssn, a_first, a_middle, a_last, phone_number, email, city, ZIP, street, state, relationship_to_patient) VALUES ('$varFirst', '$varLast', $varSSN, '$varAFirst', '$varAMiddle', '$varALast', '$varAPhoneNumber', '$varAEmail', '$varACity', '$varAZIP', '$varAStreet', '$varAState', '$varARelationship')";
      
      if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
@@ -172,15 +166,12 @@ if(isset($_POST['patientSubmit'])) {
     }
 }elseif(isset($_POST['treatmentSubmit'])){  
     // treatment_plan
-    $varTPFirst = $_POST['tp_first'];
-    $varTPLast = $_POST['tp_last'];
-    $varTPSSN = intval($_POST['tp_SSN']);
     $varGoals = $_POST['goals'];
     $varTimeline = $_POST['timeline'];
     $varActivities = $_POST['activities'];
     $varOther = $_POST['other_areas_of_concern'];
       
-      $sql = "INSERT INTO treatment_plan (SSN, p_first, p_last, goals, timeline, activities, other_areas_of_concern) VALUES ($varTPSSN, '$varTPFirst', '$varTPLast','$varGoals', '$varTimeline', '$varActivities', '$varOther')";
+      $sql = "INSERT INTO treatment_plan (SSN, p_first, p_last, goals, timeline, activities, other_areas_of_concern) VALUES ($varSSN, '$varFirst', '$varLast','$varGoals', '$varTimeline', '$varActivities', '$varOther')";
     
     if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -195,6 +186,7 @@ if(isset($_POST['patientSubmit'])) {
     
 $conn->close();
 ?>
+<a href='http://35.193.222.252/index.html'>Back</a>
 
 </body>
 </html>
