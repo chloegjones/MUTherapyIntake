@@ -21,7 +21,7 @@
             <div class="intakeForm"> <!-- intake form -->
                 <form action="info.php" method="post" id="mainForm">
                     <h3>Patient Info</h3>
-                    <h4>**You MUST input First Name, Last Name, and SSN of patient each time. You can only submit this form in parts.</h4>
+                    <h4>**You MUST input First Name, Last Name, and SSN of patient each time. You can only submit this form in parts.</h4><br><h4> Step 1: Input First name, Last name and ssn of patient<br>Step 2: Go to section you want to submit<br>Step 3: Click submit, you will be redirected, but use the back button to submit more information.</h4>
                     <input id="fn" type="text" name="first" placeholder="First Name" maxlength="30" required>
                     <input id="ln" type="text" name="last" placeholder="Last Name" maxlength="30" required>
                         <input id="ssn" type="text" name="SSN" placeholder="Social Security Number" maxlength="30" required>
@@ -75,8 +75,8 @@
 
                     <!-- NEED PHP SUBMIT OR JUST LET PATIENT TYPE IT IN-->
 
-                    <input id="location" type="text" name="location" placeholder="Location of Office" maxlength="30">
-                    <input id="level" type="text" name="level" placeholder="Level of Office" maxlength="2">
+                    <input id="location" type="text" name="location" placeholder="Location of pain" maxlength="30">
+                    <input id="level" type="text" name="level" placeholder="Level of Pain" maxlength="2">
                     <button type="submit" name="reasonSubmit" value="reasonSubmit">Submit</button>
                     <!-- this set related to "states a" and "uses" entity set  
                     <div> 
@@ -114,17 +114,6 @@
                     <input id="dname" type="text" name="doctor_name" placeholder="Doctor's Name" maxlength="30">
                     <button type="submit" name="doctorSubmit" value="doctorSubmit">Submit</button>
 
-                    <h3>Clinic</h3>
-                    <input id="cname" type="text" name="clinic_name" placeholder="Name of Clinic" maxlength="30">
-                    <input id="street" type="text" name="c_street" placeholder="Street Address" maxlength="30">
-                    <input id="city" type="text" name="c_city" placeholder="City" maxlength="30">
-                    <input id="state" type="text" name="c_state" placeholder="State" maxlength="30">
-                    <input id="zip" type="text" name="c_ZIP" placeholder="Zip Code" maxlength="30">
-                    <small>Start Date</small>
-                    <input id="startdate" type="date" name="start_date" placeholder="Start Date" maxlength="30">
-                    <small>End Date</small>
-                    <input id="enddate" type="date" name="end_date" placeholder="End Date" maxlength="30">
-                    <button type="submit" name="clinicSubmit" value="clinicSubmit">Submit</button>
 
                     <h3>Treatment Plan</h3>
                     <input id="goals" type="text" name="goals" placeholder="Treatment & Patient Goals" maxlength="30">

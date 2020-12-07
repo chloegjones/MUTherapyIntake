@@ -7,7 +7,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "DiFuAcv5TaGEDJ";
-$dbname = "phase3example";
+$dbname = "phase3";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,10 +16,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-function searchByPatient() {
-    
-}
-    
+
 if(isset($_POST['patientSearch'])){
     $varFirst = $_POST['fname'];
     $varLast = $_POST['lname'];
@@ -35,8 +32,21 @@ if(isset($_POST['patientSearch'])){
     } else {
         echo "0 results";
     } 
-}
     
+}
+if(isset($_POST['patientSearchMed'])){    
+    $sql = "SELECT medical_record.medications,has_a.p_first, has_a.p_last FROM has_a INNER JOIN medical_record ON has_a.RID=medical_record.RID;";
+    
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+        echo "Patient Name: " . $row["p_first"]. " " . $row["p_last"]. " Doctor Name: " . $row["medications"]. "<br>";
+        }
+    } else {
+        echo "0 results";
+    } 
+}
 if(isset($_POST['doctorSearch'])){
     $varDName = $_POST['dfname'];
     
@@ -52,6 +62,35 @@ if(isset($_POST['doctorSearch'])){
         echo "0 results";
     } 
 }
+    
+if(isset($_POST['doctorShowAllSearch'])){
+    
+    $sql = "SELECT sees_a.doctor_name, Patient.first, Patient.last FROM sees_a INNER JOIN Patient ON sees_a.ssn=Patient.ssn;";
+    
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+        echo "Patient Name: " . $row["first"]. " " . $row["last"]. " Doctor Name: " . $row["doctor_name"]. "<br>";
+        }
+    } else {
+        echo "0 results";
+    } 
+    
+    $sql1 = "SELECT COUNT(UPIN) as Total FROM doctor;";
+    
+    $result1 = $conn->query($sql);
+    $i = 0;
+    if ($result1->num_rows > 0) {
+        while($row = $result1->fetch_assoc()) {
+        $i = $i+1;
+        }
+        echo "Total Number of Doctors: $i";
+    } else {
+        echo "0 results";
+    } 
+}
+    
     
 if(isset($_POST['delete'])){
     $varDSSN = intval($_POST['dssn']);
@@ -112,11 +151,11 @@ if(isset($_POST['update'])){
       echo "Successfully updated " .$sql."<br>";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
-    }$sql = "UPDATE alternate_person SET ssn=$varNDSSN WHERE ssn=$varDSSN;";
+    }$sql7 = "UPDATE alternate_person SET ssn=$varNDSSN WHERE ssn=$varDSSN;";
     if ($conn->query($sql) === TRUE) {
-      echo "Successfully updated" .$sql."<br>";
+      echo "Successfully updated" .$sql7."<br>";
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      echo "Error: " . $sql7 . "<br>" . $conn->error;
     }
     $sql1 = "UPDATE emergency_contact SET ssn=$varNDSSN WHERE ssn=$varDSSN;";
     if ($conn->query($sql1) === TRUE) {
@@ -157,7 +196,7 @@ if(isset($_POST['update'])){
 }
 $conn->close();
 ?>
-<a href='http://35.193.222.252/search.html'>Back</a>
+<br><a href='http://35.193.222.252/search.html'>Back</a>
 
 </body>
 </html>

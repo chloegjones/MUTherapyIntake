@@ -6,7 +6,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "DiFuAcv5TaGEDJ";
-$dbname = "phase3example";
+$dbname = "phase3";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -147,23 +147,6 @@ if(isset($_POST['patientSubmit'])) {
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
-}elseif(isset($_POST['clinicSubmit'])){  
-    // clinic
-    $varClinicName = $_POST['clinic_name'];
-    $varCCity = $_POST['c_city'];
-    $varCZIP = $_POST['c_ZIP'];
-    $varCStreet = $_POST['c_street'];
-    $varCState = $_POST['c_state'];
-    $varStart = $_POST['start_date']; 
-    $varEnd = $_POST['end_date'];
-          
-    $sql = "INSERT INTO clinic (clinic_name, city, ZIP, street, state, start_date, end_date) VALUES ('$varClinicName', '$varCCity', '$varCZIP', '$varCStreet', '$varCState', '$varStart', '$varEnd')";
-      
-      if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
 }elseif(isset($_POST['treatmentSubmit'])){  
     // treatment_plan
     $varGoals = $_POST['goals'];
@@ -186,7 +169,7 @@ if(isset($_POST['patientSubmit'])) {
     
 $conn->close();
 ?>
-<a href='http://35.193.222.252/index.html'>Back</a>
+<br><a href='http://35.193.222.252/index.html'>Back</a>
 
 </body>
 </html>
