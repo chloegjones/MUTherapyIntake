@@ -36,8 +36,8 @@ This page allows you to search and change the database.
 # search.php:
 This page contains functions delete, update, and search to manipulate the database using inpupt from search.html.
 
-## Search Function Example:
-<?php
+##### Search Function Example:
+'''php
 $varFirst = $_POST['fname'];
     $varLast = $_POST['lname'];
     $varSSN = intval($_POST['ssn']);
@@ -52,10 +52,10 @@ $varFirst = $_POST['fname'];
     } else {
         echo "0 results";
     } 
-?>
+'''
 
-## Delete Function Example:
-<?php
+##### Delete Function Example:
+'''php
 $varDSSN = intval($_POST['dssn']);
     $sql = "DELETE FROM alternate_person WHERE ssn=$varDSSN;";
     if ($conn->query($sql) === TRUE) {
@@ -63,10 +63,10 @@ $varDSSN = intval($_POST['dssn']);
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-?>
 
-## Alter Function Example:
-<?php
+
+##### Alter Function Example:
+'''php
  $varDSSN = intval($_POST['dssn']);
     $varNDSSN = intval($_POST['ndssn']);
     $sql = "UPDATE Patient SET ssn=$varNDSSN WHERE ssn=$varDSSN;";
@@ -74,13 +74,13 @@ $varDSSN = intval($_POST['dssn']);
       echo "Successfully updated " .$sql."<br>";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
-?>
+'''
 
 # info.php: INSERT function
 Using POST, this page gets information from the form and inserts into the database. Once inserted, it shows the user if the information was successfully submitted.
 
-## Insert Function Example:
-<?php
+##### Insert Function Example:
+'''php
 $varFirst = $_POST['first'];
 $varLast = $_POST['last'];
 $varSSN = intval($_POST['SSN']);  
@@ -110,4 +110,4 @@ if(isset($_POST['patientSubmit'])) {
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
-?>
+'''
