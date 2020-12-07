@@ -17,15 +17,16 @@ This is the about page with a description of the website.
 This is the main intake form.
 Step 1: Input First Name, Last Name and SSN of patient.
 Step 2: Go to the section you want to submit: 
-*Patient Info (required)
-*Emergency Contact (not required)
-*Alternative Person (not required)
-*Reason for Visit (required)
-*Insurance (required)
-*Medical Record (required)
-*Doctor(required)
-*Clinic (required)
-*Treatement Plan (required)
+* Patient Info (required)
+* Emergency Contact (not required)
+* Alternative Person (not required)
+* Reason for Visit (required)
+* Insurance (required)
+* Medical Record (required)
+* Doctor(required)
+* Clinic (required)
+* Treatement Plan (required)
+
 Step 3: Click submit which submits a form to info.php to perform the insertion. You will be redirected, but use the back button to submit more information.
 
 
@@ -35,7 +36,7 @@ This page allows you to search and change the database.
 # search.php:
 This page contains functions delete, update, and search to manipulate the database using inpupt from search.html.
 
-##Search Function Example:
+## Search Function Example:
 <?php
 $varFirst = $_POST['fname'];
     $varLast = $_POST['lname'];
@@ -53,7 +54,7 @@ $varFirst = $_POST['fname'];
     } 
 ?>
 
-##Delete Function Example:
+## Delete Function Example:
 <?php
 $varDSSN = intval($_POST['dssn']);
     $sql = "DELETE FROM alternate_person WHERE ssn=$varDSSN;";
@@ -64,7 +65,7 @@ $varDSSN = intval($_POST['dssn']);
     }
 ?>
 
-##Alter Function Example:
+## Alter Function Example:
 <?php
  $varDSSN = intval($_POST['dssn']);
     $varNDSSN = intval($_POST['ndssn']);
@@ -78,7 +79,7 @@ $varDSSN = intval($_POST['dssn']);
 # info.php: INSERT function
 Using POST, this page gets information from the form and inserts into the database. Once inserted, it shows the user if the information was successfully submitted.
 
-##Insert Function Example:
+## Insert Function Example:
 <?php
 $varFirst = $_POST['first'];
 $varLast = $_POST['last'];
