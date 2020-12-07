@@ -125,13 +125,17 @@ if(isset($_POST['patientSubmit'])) {
     $varOperations = $_POST['operations'];
       
      $sql = "INSERT INTO medical_record (RID, medications, family_history, allergies, immunizations, operations) VALUES ('$varRID', '$varMedication', '$varFamilyHistory', '$varAllergies', '$varImmunizations', '$varOperations')"; 
-      
-    $sql = "INSERT INTO has_a(RID, ssn, p_first, p_last)VALUES($varRID, $varSSN, '$varFirst', '$varLast')";
-    
       if ($conn->query($sql) === TRUE) {
       echo "New record created successfully";
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    $sql1 = "INSERT INTO has_a(RID, ssn, p_first, p_last)VALUES($varRID, $varSSN, '$varFirst', '$varLast')";
+    
+      if ($conn->query($sql1) === TRUE) {
+      echo "New record created successfully";
+        } else {
+          echo "Error: " . $sql1 . "<br>" . $conn->error;
         }
 }elseif(isset($_POST['doctorSubmit'])){ 
      //    doctor inputs
@@ -139,13 +143,18 @@ if(isset($_POST['patientSubmit'])) {
     $varDName = $_POST['doctor_name'];
     
     $sql = "INSERT INTO doctor (UPIN, doctor_name) VALUES ($varUPIN, '$varDName')";
-    
-    $sql = "INSERT INTO sees_a(UPIN, doctor_name, ssn, p_first, p_last)VALUES($varUPIN, '$varDName', $varSSN, '$varFirst', '$varLast')";
-    
-       if ($conn->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE) {
           echo "New record created successfully";
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+    
+    $sql1 = "INSERT INTO sees_a(UPIN, doctor_name, ssn, p_first, p_last)VALUES($varUPIN, '$varDName', $varSSN, '$varFirst', '$varLast')";
+    
+       if ($conn->query($sql1) === TRUE) {
+          echo "New record created successfully";
+        } else {
+          echo "Error: " . $sql1 . "<br>" . $conn->error;
         }
 }elseif(isset($_POST['treatmentSubmit'])){  
     // treatment_plan
